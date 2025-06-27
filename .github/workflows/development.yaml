@@ -25,10 +25,7 @@ jobs:
 
       - name: Run HTMLHint
         run: npx htmlhint .
-      - name: Fix permissions just in case
-        run: chmod +x ./node_modules/.bin/stylelint
-
-
+     
       - name: Run Stylelint
         run: npm run lint:css
 
