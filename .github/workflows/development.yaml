@@ -1,0 +1,45 @@
+name: Development Workflow
+
+on:
+  push:
+    branches: [develop]
+
+
+jobs:
+  build-and-deploy:
+    name: Lint, Build & Deploy to Development Environment
+    runs-on: ubuntu-latest
+    environment: development-env
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      - name: Install Dependencies
+        run: npm install
+
+      - name: Run HTMLHint
+        run: npx htmlhint .
+      - name: Fix permissions just in case
+        run: chmod +x ./node_modules/.bin/stylelint
+
+
+      - name: Run Stylelint
+        run: npm run lint:css
+
+      - name: Build Project with Parcel
+        run: npx parcel build src/index.html --dist-dir dist
+
+      - name: Deploy to GitHub Pages
+        if: github.ref == 'refs/heads/develop'
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages-dev
+          destination_dir: .
