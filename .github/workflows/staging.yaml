@@ -7,7 +7,7 @@ on:
 
 jobs:
   build-and-deploy:
-    name: Lint & Deploy to Staging Environment
+    name: Lint, Build & Deploy to Staging Environment
     runs-on: ubuntu-latest
     environment: staging-env
 
@@ -16,7 +16,7 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Setup Node.js (required for linting)
+      # Setup Node.js
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
@@ -34,11 +34,15 @@ jobs:
       - name: Run Stylelint
         run: npx stylelint "styles/**/*.css"
 
+      # Build Project with Parcel
+      - name: Build Project with Parcel
+        run: npx parcel build src/index.html --dist-dir dist
+
       # Deploy to GitHub Pages (Staging)
       - name: Deploy to Staging
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./src   # Deploys src folder (HTML pages)
-          publish_branch: gh-pages-staging  # Branch for staging deployment
-          destination_dir: .   # Deploy to root of the branch
+          publish_dir: ./dist   # Built output folder
+          publish_branch: gh-pages-staging  # Deployment branch for staging
+          destination_dir: .    # Deploy to root directory of gh-pages-staging
