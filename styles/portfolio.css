@@ -1,307 +1,119 @@
-/* Reset and Global Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: Arial, sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cooking Delight | Our Portfolio</title>
+  <link rel="stylesheet" href="styles/portfolio.css">
 
-body {
-    color: #333;
-    background-color: #fff;
-    line-height: 1.6;
-}
+</head>
+<body>
 
-a {
-    text-decoration: none;
-    color: #333;
-}
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-content">
+        <a href="./index.html" class="logo">cookingdelight</a>
+        <div class="nav-links">
+          <a href="./index.html">Home</a>
+          <a href="./about.html">About</a>
+          <a href="./contact-us.html">Contact Us</a>
+          <a href="./services.html">Services</a>
+          <a href="./portfolio.html" class="active">Portfolio</a>
+          <a href="./blog.html">Blog</a>
+        </div>
+      </div>
+    </div>
+  </nav>
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <h1>our <span class="hero-highlight">culinary creations</span></h1>
+        <p class="hero-description">explore our signature dishes and creative masterpieces that delight every food lover</p>
+        <div class="hero-intro">
+          <p>at cooking delight, our portfolio showcases a fusion of flavors and artistic presentations. from vibrant salads to rich desserts, every dish tells a story of passion and craftsmanship.</p>
+        </div>
+        <div class="cta-section">
+          <a href="./contact-us.html" class="cta-button">work with us</a>
+          <p class="cta-text">partner with us for catering, recipe development, or culinary events</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-/* Navbar */
-.navbar {
-    background-color: #fff;
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
-}
+  <!-- Portfolio Gallery Section -->
+  <section class="portfolio-gallery">
+    <div class="container">
+      <h2>featured works</h2>
+      <div class="gallery-grid">
 
-.nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=400&q=80" alt="Fresh Salad">
+          <div class="item-info">
+            <h3>fresh summer salad</h3>
+            <p>a vibrant mix of seasonal vegetables with our special dressing</p>
+          </div>
+        </div>
 
-.logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #ff6b6b;
-}
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1565557623262-b51c2513a641?auto=format&fit=crop&w=400&q=80" alt="Artisan Pasta">
+          <div class="item-info">
+            <h3>artisan pasta</h3>
+            <p>handmade pasta with truffle oil and wild mushrooms</p>
+          </div>
+        </div>
 
-.nav-links {
-    display: flex;
-    gap: 30px;
-}
+        <div class="portfolio-item">
+          <img src="https://images.unsplash.com/photo-1563805042-7684c019e1cb?auto=format&fit=crop&w=400&q=80" alt="Chocolate Dessert">
+          <div class="item-info">
+            <h3>decadent desserts</h3>
+            <p>rich chocolate creations that satisfy every sweet tooth</p>
+          </div>
+        </div>
 
-.nav-links a {
-    text-decoration: none;
-    color: #333;
-    transition: color 0.3s ease;
-}
+      </div>
+    </div>
+  </section>
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: #ff6b6b;
-}
+  <!-- Contact Section (Optional like index) -->
+  <section class="contact" id="contact">
+    <div class="container">
+      <h2>get started with cooking delight</h2>
+      <p>ready to begin your culinary journey? contact us to learn more about our recipes and services.</p>
+      <div class="contact-info">
+        <p>email: hello@cookingdelight.com</p>
+        <p>phone: (123) 456-7890</p>
+      </div>
+    </div>
+  </section>
 
-/* Footer link styles */
-.footer-column ul li a {
-    color: #ccc;
-    transition: color 0.3s ease;
-}
+  <!-- Footer -->
+  <footer>
+    <div class="container">
+      <div class="footer-content">
 
-.footer-column ul li a:hover {
-    color: #ff6b6b;
-}
+        <div class="footer-column">
+          <h3>About Cooking Delight</h3>
+          <p>making cooking fun and accessible for everyone through delicious recipes and helpful tips. we believe that great food brings people together.</p>
+        </div>
 
-/* Hero Section */
-.hero {
-    background: linear-gradient(135deg, #ff6b6b, #ff9e2c);
-    color: #fff;
-    padding: 120px 0 80px;
-    text-align: center;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-}
+        <div class="footer-column">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="./index.html">Home</a></li>
+            <li><a href="./about.html">About</a></li>
+            <li><a href="./contact-us.html">Contact</a></li>
+          </ul>
+        </div>
 
-.hero-content {
-    max-width: 800px;
-    margin: 0 auto;
-}
+      </div>
+      <div class="copyright">
+        <p>&copy; 2023 Cooking Delight. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
 
-.hero h1 {
-    font-size: 56px;
-    margin-bottom: 20px;
-    font-weight: bold;
-    text-transform: capitalize;
-}
-
-.hero-highlight {
-    color: #fff200;
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-}
-
-.hero-description {
-    font-size: 22px;
-    margin-bottom: 30px;
-    opacity: 0.9;
-}
-
-.hero-intro {
-    background: rgba(255, 255, 255, 0.1);
-    padding: 30px;
-    border-radius: 15px;
-    margin-bottom: 40px;
-    backdrop-filter: blur(10px);
-}
-
-.hero-intro p {
-    font-size: 18px;
-    line-height: 1.8;
-}
-
-.cta-section {
-    margin-top: 40px;
-}
-
-.cta-button {
-    display: inline-block;
-    padding: 20px 40px;
-    background-color: #fff;
-    color: #ff6b6b;
-    border-radius: 50px;
-    font-weight: bold;
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease;
-}
-
-.cta-button:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
-}
-
-.cta-text {
-    margin-top: 15px;
-    font-size: 16px;
-    opacity: 0.8;
-}
-
-/* Portfolio Gallery Section */
-.portfolio-gallery {
-    padding: 80px 0;
-    background-color: #f9f9f9;
-}
-
-.portfolio-gallery h2 {
-    text-align: center;
-    font-size: 36px;
-    color: #ff6b6b;
-    margin-bottom: 50px;
-    text-transform: capitalize;
-}
-
-.gallery-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.portfolio-item {
-    background: #fff;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
-}
-
-.portfolio-item:hover {
-    transform: translateY(-10px);
-}
-
-.portfolio-item img {
-    width: 100%;
-    height: 250px;
-    object-fit: cover;
-}
-
-.item-info {
-    padding: 20px;
-}
-
-.item-info h3 {
-    font-size: 22px;
-    margin-bottom: 10px;
-    color: #333;
-    text-transform: capitalize;
-}
-
-.item-info p {
-    color: #666;
-    line-height: 1.5;
-}
-
-/* Contact Section */
-.contact {
-    padding: 80px 0;
-    background-color: #fff;
-    text-align: center;
-}
-
-.contact h2 {
-    font-size: 36px;
-    margin-bottom: 20px;
-    color: #ff6b6b;
-    text-transform: capitalize;
-}
-
-.contact p {
-    font-size: 18px;
-    margin-bottom: 30px;
-    color: #666;
-}
-
-.contact-info {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 30px;
-}
-
-.contact-info p {
-    font-size: 16px;
-    color: #333;
-    font-weight: bold;
-}
-
-/* Footer */
-footer {
-    background-color: #333;
-    color: #ccc;
-    padding: 40px 0 20px;
-}
-
-.footer-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 30px;
-}
-
-.footer-column h3 {
-    color: #fff;
-    margin-bottom: 15px;
-    font-size: 20px;
-    text-transform: capitalize;
-}
-
-.footer-column p {
-    margin-bottom: 10px;
-    line-height: 1.6;
-}
-
-.footer-column ul {
-    list-style: none;
-}
-
-.footer-column ul li {
-    margin-bottom: 8px;
-}
-
-.copyright {
-    text-align: center;
-    margin-top: 30px;
-    padding-top: 20px;
-    border-top: 1px solid #555;
-    font-size: 14px;
-}
-
-/* Responsive Design */
-@media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
-
-    .hero h1 {
-        font-size: 42px;
-    }
-
-    .hero-description {
-        font-size: 18px;
-    }
-
-    .hero-intro p {
-        font-size: 16px;
-    }
-
-    .cta-button {
-        padding: 15px 30px;
-        font-size: 16px;
-    }
-
-    .contact-info {
-        flex-direction: column;
-        gap: 15px;
-    }
-}
+</body>
+</html>
