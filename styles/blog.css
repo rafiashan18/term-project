@@ -1,52 +1,62 @@
-/* Blog Page Styles */
+
 /* Navbar Styles */
 .navbar {
-    background-color: #fff;
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+  background-color: #fff;
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #ff6b6b;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff6b6b;
 }
 
 .nav-links {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
 }
 
 .nav-links a {
-    color: #333;
-    font-weight: 500;
-    text-decoration: none;
-    transition: color 0.3s ease;
+  color: #333;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.sidebar-widget a {
+  color: #666;
+  text-decoration: none;
+}
+
+.sidebar-widget a:hover {
+  color: #ff6b6b;
 }
 
 .nav-links a:hover,
 .nav-links a.active {
-    color: #ff6b6b;
+  color: #ff6b6b;
 }
 
 /* Responsive Navbar */
 @media (max-width: 768px) {
-    .nav-links {
-        display: none;
-    }
+  .nav-links {
+    display: none;
+  }
 }
 
+/* Blog Page Styles */
 .blog-header {
   background: linear-gradient(135deg, #ff6b6b, #ff9e2c);
   color: white;
@@ -76,7 +86,7 @@
   background: white;
   border-radius: 8px;
   overflow: hidden;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease;
 }
 
@@ -123,7 +133,7 @@
   background: white;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
   margin-bottom: 30px;
 }
 
@@ -141,25 +151,16 @@
   margin-bottom: 0.8rem;
 }
 
-.sidebar-widget a {
-  color: #666;
-  text-decoration: none;
-}
-
-.sidebar-widget a:hover {
-  color: #ff6b6b;
-}
-
 @media (max-width: 768px) {
   .blog-layout {
     grid-template-columns: 1fr;
   }
-  
+
   .blog-header {
     padding: 80px 0 40px;
     margin-top: 60px;
   }
-  
+
   .blog-header h1 {
     font-size: 2rem;
   }
