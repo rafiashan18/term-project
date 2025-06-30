@@ -1,48 +1,57 @@
 /* Contact Page Styles */
 body {
-    color: #333;
-    background-color: #fff;
-    line-height: 1.6;
+  color: #333;
+  background-color: #fff;
+  line-height: 1.6;
 }
 
-
-
 .container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 0 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
 .navbar {
-    background-color: #fff;
-    padding: 20px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    position: fixed;
-    top: 0;
-    left: 0;
-    right: 0;
-    z-index: 1000;
+  background-color: #fff;
+  padding: 20px 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
 .nav-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #ff6b6b;
+  font-size: 24px;
+  font-weight: bold;
+  color: #ff6b6b;
 }
 
 .nav-links {
-    display: flex;
-    gap: 30px;
+  display: flex;
+  gap: 30px;
+}
+
+/* Moved this block up to fix no-descending-specificity error */
+.social-links a {
+  color: #ff6b6b;
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #ff5252;
 }
 
 .nav-links a:hover {
-    color: #ff6b6b;
+  color: #ff6b6b;
 }
 
 .contact-main {
@@ -152,25 +161,15 @@ body {
   margin-top: 20px;
 }
 
-.social-links a {
-  color: #ff6b6b;
-  font-size: 1.5rem;
-  transition: color 0.3s;
-}
-
-.social-links a:hover {
-  color: #ff5252;
-}
-
 @media (max-width: 768px) {
   .contact-container {
     grid-template-columns: 1fr;
   }
-  
+
   .contact-hero {
     padding: 60px 0 40px;
   }
-  
+
   .contact-hero h1 {
     font-size: 2rem;
   }
