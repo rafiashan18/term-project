@@ -2,7 +2,8 @@ name: Staging Workflow
 
 on:
   push:
-    branches: [workflow/staging]
+    branches:
+      - 'release/**'   # Triggers on any branch starting with release/
 
 jobs:
   build-and-deploy:
@@ -15,21 +16,21 @@ jobs:
       - name: Checkout Repository
         uses: actions/checkout@v3
 
-      # Setup Node.js (required for linting tools)
+      # Setup Node.js (required for linting)
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '18'
 
-      # Install dependencies (if any)
+      # Install dependencies
       - name: Install Dependencies
         run: npm install
 
-      # Run HTMLHint for HTML files in src/
+      # Run HTMLHint on HTML files inside src/
       - name: Run HTMLHint
         run: npx htmlhint "src/**/*.html"
 
-      # Run Stylelint for CSS files in styles/
+      # Run Stylelint on CSS files inside styles/
       - name: Run Stylelint
         run: npx stylelint "styles/**/*.css"
 
@@ -38,6 +39,6 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./src  # Deploy src folder (contains HTML files)
-          publish_branch: gh-pages-staging  # Deployment branch for staging
-          destination_dir: .  # Deploy to root
+          publish_dir: ./src   # Deploys src folder (HTML pages)
+          publish_branch: gh-pages-staging  # Branch for staging deployment
+          destination_dir: .   # Deploy to root of the branch
