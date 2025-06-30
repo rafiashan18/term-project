@@ -57,7 +57,10 @@ a {
     color: #333;
     transition: color 0.3s ease;
 }
-
+.nav-links a:hover,
+.nav-links a.active {
+    color: #ff6b6b;
+}
 /* Footer link styles — placed before .nav-links a:hover to fix linter */
 .footer-column ul li a {
     color: #ccc;
@@ -68,10 +71,6 @@ a {
     color: #ff6b6b;
 }
 
-.nav-links a:hover,
-.nav-links a.active {
-    color: #ff6b6b;
-}
 
 /* Hero Section */
 .hero {
