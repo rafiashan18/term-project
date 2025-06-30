@@ -1,0 +1,43 @@
+name: Staging Workflow
+
+on:
+  push:
+    branches: [workflow/staging]
+
+jobs:
+  build-and-deploy:
+    name: Lint & Deploy to Staging Environment
+    runs-on: ubuntu-latest
+    environment: staging-env
+
+    steps:
+      # Checkout the repository
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Setup Node.js (required for linting tools)
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      # Install dependencies (if any)
+      - name: Install Dependencies
+        run: npm install
+
+      # Run HTMLHint for HTML files in src/
+      - name: Run HTMLHint
+        run: npx htmlhint "src/**/*.html"
+
+      # Run Stylelint for CSS files in styles/
+      - name: Run Stylelint
+        run: npx stylelint "styles/**/*.css"
+
+      # Deploy to GitHub Pages (Staging)
+      - name: Deploy to Staging
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./src  # Deploy src folder (contains HTML files)
+          publish_branch: gh-pages-staging  # Deployment branch for staging
+          destination_dir: .  # Deploy to root
