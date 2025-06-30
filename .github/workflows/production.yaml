@@ -1,0 +1,48 @@
+name: Production Workflow
+
+on:
+  push:
+    branches:
+      - production  
+
+jobs:
+  build-and-deploy:
+    name: Lint, Build & Deploy to Production Environment
+    runs-on: ubuntu-latest
+    environment: production-env
+
+    steps:
+      # Checkout the code
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      # Setup Node.js
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+
+      # Install dependencies
+      - name: Install Dependencies
+        run: npm install
+
+      # Lint HTML files in src/
+      - name: Run HTMLHint
+        run: npx htmlhint "src/**/*.html"
+
+      # Lint CSS files in styles/
+      - name: Run Stylelint
+        run: npx stylelint "styles/**/*.css"
+
+      # Build the project using Parcel
+      - name: Build Project with Parcel
+        run: npx parcel build src/index.html --dist-dir dist
+
+      # Deploy to GitHub Pages (Production)
+      - name: Deploy to Production
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist
+          publish_branch: gh-pages  
+          destination_dir: .
