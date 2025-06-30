@@ -1,9 +1,18 @@
 {
+  "extends": "stylelint-config-standard",
   "rules": {
     "declaration-block-no-duplicate-properties": true,
     "no-duplicate-selectors": true,
     "value-keyword-case": "lower",
     "selector-type-case": "lower",
-    "block-no-empty": true
+    "block-no-empty": true,
+    "font-family-no-duplicate-names": true,
+    "no-empty-source": true,
+    "color-hex-case": null,
+    "declaration-block-semicolon-newline-after": null,
+    "color-function-notation": null,
+    "alpha-value-notation": null,
+    "color-named": null,
+    "media-feature-range-notation": null
   }
 }
