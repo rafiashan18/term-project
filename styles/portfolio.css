@@ -57,6 +57,8 @@ a {
     color: #333;
     transition: color 0.3s ease;
 }
+
+/* Footer link styles — placed before .nav-links a:hover to fix linter */
 .footer-column ul li a {
     color: #ccc;
     transition: color 0.3s ease;
